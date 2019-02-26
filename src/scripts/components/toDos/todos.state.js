@@ -1,8 +1,8 @@
-import newUuid from '../utils/uuid'
-import { ADD_TODO } from './reducer'
+import newUuid from '../../utils/uuid'
+import { ADD_TODO } from './todos.reducer'
 
 const toDoFactory = ({
-  text = 'ToDo',
+  text = '<ToDo>',
   id = newUuid(),
   lastAction = ADD_TODO,
   date = new Date()
@@ -14,13 +14,12 @@ const toDoFactory = ({
 })
 
 const initialState = {
-  counter: 2,
   todos: [
     {
-      ...toDoFactory('To Do 1')
+      ...toDoFactory({text: 'To Do 1'})
     },
     {
-      ...toDoFactory('To Do 2')
+      ...toDoFactory({text: 'To Do 2'})
     },
   ]
 }
