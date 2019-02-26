@@ -4,11 +4,13 @@ import PropTypes from 'prop-types'
 const AddTodo = ({add}) => {
   const [text, setText] = useState('')
   const inputRef = useRef()
+  const onSubmit = (e) => e && e.preventDefault && e.preventDefault()
+
   return (
-    <>
-      <input ref={inputRef} type="text" value={text} onChange={ e => setText(e.target.value) } />
+    <form onSubmit={onSubmit}>
+      <input autoFocus ref={inputRef} type="text" value={text} onChange={ e => setText(e.target.value) } />
       <button onClick={() => {add(text); setText(""); inputRef.current.focus()}}>Add</button>
-    </>
+    </form>
   )
 }
 
