@@ -16,6 +16,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  plugins: [
+    "react-hooks"
+  ],
   // add your custom rules here
   rules: {
     "indent": ["error", 2],
@@ -35,6 +38,7 @@ module.exports = {
       "anonymous": "never"
     }],
     "no-debugger": "error",
+    "react-hooks/rules-of-hooks": "error",
   },
   globals: {}
 }

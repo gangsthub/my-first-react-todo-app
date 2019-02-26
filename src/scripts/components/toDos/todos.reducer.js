@@ -1,4 +1,4 @@
-import newUuid from '../../utils/uuid'
+import {toDoFactory} from './todos.state'
 
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
@@ -12,7 +12,7 @@ export const todosReducer = (state, action) => {
         ...state,
         todos: [
           ...state.todos,
-          { text: action.text, id: newUuid() }
+          toDoFactory({ text: action.text})
         ]
       }
     }

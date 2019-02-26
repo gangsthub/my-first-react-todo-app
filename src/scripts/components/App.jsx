@@ -1,6 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 
-import initialState from './toDos/todos.state'
+import { todosLSKey,  initialState } from './toDos/todos.state'
 import {
   todosReducer,
   ADD_TODO,
@@ -12,6 +12,17 @@ import TodoItem from './toDos/TodoItem'
 
 function App() {
   const [state, dispatch] = useReducer(todosReducer, initialState)
+
+  // eslint-disable-next-line no-console
+  console.log(state)
+
+  useEffect(
+    () => {
+      window.localStorage.setItem(todosLSKey, JSON.stringify(state))
+    },
+    [state]
+  )
+
   return (
     <>
       <div className="App ">
