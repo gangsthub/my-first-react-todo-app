@@ -15,7 +15,7 @@ const TodoItem = ({todo, remove, toggleCheck}) => {
           onChange={toggleCheck}
         />
         <span
-          className={todo.checked ? 'strike-trough translucency user-select-none': undefined}
+          className={'user-select-none ' + (todo.checked ? 'strike-trough translucency ': undefined)}
         >{todo.text}</span>
       </label>
       <button onClick={remove} className="c-p">Remove</button>

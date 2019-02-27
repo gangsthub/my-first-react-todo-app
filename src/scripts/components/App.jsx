@@ -10,6 +10,8 @@ import {
 
 import AddTodo from './toDos/AddTodo'
 import TodoItem from './toDos/TodoItem'
+import Header from './layout/Header'
+import Footer from './layout/Footer'
 
 function App() {
   const [state, dispatch] = useReducer(todosReducer, initialState)
@@ -30,20 +32,25 @@ function App() {
   return (
     <>
       <div className="App ">
-        <h1>Todo App</h1>
+        <Header headerTitle="ToDo App"/>
         {
-          state.todos.map((todo, i) => (
-            <TodoItem
-              key={i}
-              todo={todo}
-              remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
-              toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
-            />
-          ))
+          state.todos.length
+            ?
+            state.todos.map((todo, i) => (
+              <TodoItem
+                key={i}
+                todo={todo}
+                remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
+                toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
+              />
+            ))
+            :
+            'Add your ToDos...'
         }
         <AddTodo
           add={addTodo}
         />
+        <Footer footerText="Exercise"/>
       </div>
     </>
   )
