@@ -26,6 +26,20 @@ export const todosReducer = (state, action) => {
       }
     }
     return state
+  case CHECK_TODO:
+    if (action.id) {
+      const newSetOfToDos = state.todos.map(todo => {
+        if (todo.id === action.id) {
+          todo.checked = !todo.checked
+        }
+        return todo
+      })
+      return {
+        ...state,
+        todos: newSetOfToDos
+      }
+    }
+    return state
   default:
     throw new Error('no action type matching')
   }

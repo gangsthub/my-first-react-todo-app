@@ -6,10 +6,28 @@ const AddTodo = ({add}) => {
   const inputRef = useRef()
   const onSubmit = (e) => e && e.preventDefault && e.preventDefault()
 
+  const handleSubmit = () => {
+    add(text)
+    setText('')
+    inputRef.current.focus()
+  }
+
+  const handleInputChange = e => setText(e.target.value)
+
   return (
     <form onSubmit={onSubmit}>
-      <input autoFocus ref={inputRef} type="text" value={text} onChange={ e => setText(e.target.value) } />
-      <button onClick={() => {add(text); setText(""); inputRef.current.focus()}}>Add</button>
+      <input
+        autoFocus
+        ref={inputRef}
+        type="text"
+        value={text}
+        onChange={handleInputChange}
+      />
+      <button
+        className="c-p"
+        disabled={text === ''}
+        onClick={handleSubmit}
+      >Add</button>
     </form>
   )
 }

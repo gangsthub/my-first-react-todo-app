@@ -4,7 +4,8 @@ import { todosLSKey,  initialState } from './toDos/todos.state'
 import {
   todosReducer,
   ADD_TODO,
-  REMOVE_TODO
+  REMOVE_TODO,
+  CHECK_TODO
 } from './toDos/todos.reducer'
 
 import AddTodo from './toDos/AddTodo'
@@ -23,6 +24,9 @@ function App() {
     [state]
   )
 
+  // try to avoid arrow functions (and bind) in render
+  const addTodo = text =>  dispatch({type: ADD_TODO, text})
+
   return (
     <>
       <div className="App ">
@@ -33,11 +37,12 @@ function App() {
               key={i}
               todo={todo}
               remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
+              toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
             />
           ))
         }
         <AddTodo
-          add={ text => dispatch({type: ADD_TODO, text}) }
+          add={addTodo}
         />
       </div>
     </>

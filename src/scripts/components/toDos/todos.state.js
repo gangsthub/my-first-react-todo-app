@@ -1,16 +1,17 @@
 import newUuid from '../../utils/uuid'
 import { ADD_TODO } from './todos.reducer'
 
+/**
+ * Helper function to generate ToDos
+ */
 const toDoFactory = ({
-  text = '<ToDo>',
-  id = newUuid(),
-  lastAction = ADD_TODO,
-  date = new Date()
+  text
 } = {}) => ({
+  id: newUuid(),
   text,
-  id,
-  lastAction,
-  date,
+  lastAction: ADD_TODO,
+  checked: false,
+  date: new Date(),
 })
 
 const todosLSKey = 'toDos'

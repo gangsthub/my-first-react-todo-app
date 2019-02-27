@@ -1,11 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TodoItem = ({todo, remove}) => {
+const TodoItem = ({todo, remove, toggleCheck}) => {
+
+  const customId = 'checked' + todo.id
+
   return (
     <div>
-      <span>{todo.text}</span>
-      <button onClick={remove}>Remove</button>
+      <label htmlFor={customId} className="c-p">
+        <input
+          type="checkbox"
+          id={customId}
+          checked={todo.checked}
+          onChange={toggleCheck}
+        />
+        <span
+          className={todo.checked && 'strike-trough translucency user-select-none'}
+        >{todo.text}</span>
+      </label>
+      <button onClick={remove} className="c-p">Remove</button>
     </div>
   )
 }
@@ -13,6 +26,7 @@ const TodoItem = ({todo, remove}) => {
 TodoItem.propTypes = {
   todo: PropTypes.object,
   remove: PropTypes.func.isRequired,
+  toggleCheck: PropTypes.func.isRequired,
 }
 
 export default TodoItem
