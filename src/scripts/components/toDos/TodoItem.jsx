@@ -6,7 +6,7 @@ const TodoItem = ({todo, remove, toggleCheck}) => {
   const customId = 'checked' + todo.id
 
   return (
-    <div>
+    <div className="w100p">
       <label htmlFor={customId} className="c-p">
         <input
           type="checkbox"
@@ -15,7 +15,7 @@ const TodoItem = ({todo, remove, toggleCheck}) => {
           onChange={toggleCheck}
         />
         <span
-          className={todo.checked && 'strike-trough translucency user-select-none'}
+          className={todo.checked ? 'strike-trough translucency user-select-none': undefined}
         >{todo.text}</span>
       </label>
       <button onClick={remove} className="c-p">Remove</button>
