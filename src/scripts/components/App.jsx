@@ -53,6 +53,9 @@ function App() {
               add={addTodo}
             />
           </section>
+          <aside>
+            <h2>Logging</h2>
+          </aside>
         </main>
         <Footer footerText="Exercise"/>
       </div>
