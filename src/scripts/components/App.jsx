@@ -11,7 +11,7 @@ import {
 } from './toDos/todos.reducer'
 
 import AddTodo from './toDos/todosForm/AddTodo'
-import TodoItem from './toDos/todosForm/TodoItem'
+import TodoItem from './toDos/todosForm/TodoItem/TodoItem'
 import History from './toDos/Logging/History'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
@@ -34,30 +34,33 @@ function App() {
 
   return (
     <>
-      <div className="app">
+      <div
+        className="app flex column justify-content-between w100p sm:w60p ma-auto"
+      >
         <Header headerTitle="ToDo App"/>
-        <main className="sm:flex justify-content-between">
-          <section>
-            {
-              state.todos.length
-                ?
-                state.todos.map((todo, i) => (
-                  <TodoItem
-                    key={i}
-                    todo={todo}
-                    remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
-                    toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
-                  />
-                ))
-                :
-                'Add your ToDos...'
-            }
+        <main className="sm:flex justify-content-between flex-1">
+          <section className="pb-4 w80p flex column">
+            <div className="scroll-y">
+              {
+                state.todos.length
+                  ?
+                  state.todos.map((todo, i) => (
+                    <TodoItem
+                      key={i}
+                      todo={todo}
+                      remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
+                      toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
+                    />
+                  ))
+                  :
+                  'Add your ToDos...'
+              }
+            </div>
             <AddTodo
               add={addTodo}
             />
           </section>
-          <aside>
-            <h2>Logging</h2>
+          <aside className="w20p scroll-y">
             <History todos={state.toDosHistory} />
           </aside>
         </main>

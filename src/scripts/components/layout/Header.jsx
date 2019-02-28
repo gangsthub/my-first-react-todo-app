@@ -7,7 +7,7 @@ Header.propTypes = {
 
 export default function Header({headerTitle}) {
   return (
-    <header>
+    <header className="tac pa-5">
       <h1>{headerTitle}</h1>
     </header>
   )

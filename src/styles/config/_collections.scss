@@ -1,0 +1,37 @@
+// SPACING
+
+$AXES: (
+  y: (
+      top: t,
+      bottom: b,
+  ),
+  x: (
+      right: r,
+      left: l
+  )
+);
+
+$GUTTERS: (
+  auto: auto,
+  1: 2px,
+  2: 4px,
+  3: 8px,
+  4: 16px,
+  5: 32px,
+  6: 64px,
+  0: 0,
+);
+
+// COLORS
+$primary: hsl(273, 42%, 38%);
+$secondary: hsl(173, 42%, 28%);
+
+// GRAFICOLS
+
+$BREAK_POINTS: (
+  sm: '(min-width: 40em)',
+  md: '(min-width: 40.01em) and (max-width: 63.99em)',
+  xl: '(min-width: 64em)',
+);
+
+$G_WINDOW_DIMENSIONS: $BREAK_POINTS;

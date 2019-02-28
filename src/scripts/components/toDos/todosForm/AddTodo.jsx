@@ -24,7 +24,7 @@ const AddTodo = ({add}) => {
   const handleInputChange = e => setText(e.target.value)
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="mt-auto mb-0">
       <input
         autoFocus
         ref={inputRef}

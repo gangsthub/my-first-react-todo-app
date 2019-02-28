@@ -4,4 +4,20 @@
 
 button {
   user-select: none;
+  background-color: $primary;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  padding: 4px;
+  border-radius: $default-brad;
+  &:disabled,
+  &[disabled],
+  &[disabled="true"] {
+    background-color: lighten($primary, 30%);
+    color: rgba(#FFF, .3);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px $secondary;
+  }
 }

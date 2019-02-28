@@ -3,11 +3,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { REMOVE_TODO, CHECK_TODO } from './../todos.reducer'
+
+
 const HistoryItem = ({todo}) => {
+
+  const subString = todo.text ? ('' + todo.text).substring(0, 10) + '...' : ''
+  let emoji = '➕'
+  switch (todo.lastAction) {
+  case REMOVE_TODO:
+    emoji = '👋🏾'
+    break
+  case CHECK_TODO:
+    emoji = todo.checked ? '✅' : '🔙'
+    break
+  default:
+    break
+  }
 
   return (
     <div>
-      <span>{todo.text}</span>
+      {
+        emoji
+      }
+      <span className="oh" title={todo.text}>{subString}</span>
     </div>
   )
 }

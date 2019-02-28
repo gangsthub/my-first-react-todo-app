@@ -1,0 +1,7 @@
+@import '../../../../../styles/config/collections';
+
+.todo__item {
+  background: lighten($primary, 53%);
+  min-height: 40px;
+  align-items: center;
+}

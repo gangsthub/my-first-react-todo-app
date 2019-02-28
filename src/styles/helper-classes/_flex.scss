@@ -1,0 +1,30 @@
+// using pre defined media queries
+@each $mediaName, $mediaValue in $G_WINDOW_DIMENSIONS {
+  @media #{ $mediaValue } {
+    .#{$mediaName}\:flex {
+      display: flex;
+      &.#{$mediaName}\:column {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}

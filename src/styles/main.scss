@@ -1,8 +1,10 @@
 @import "~@graficos/graficols/graficols"; // external (see .sassrc file)
 
-@import 'config'; // first one
+@import 'config/config'; // first one
 @import 'resets';
 @import 'texts';
-@import 'cols';
-@import 'flex';
-@import 'visibility';
+@import 'helper-classes/cols';
+@import 'helper-classes/flex';
+@import 'helper-classes/spacing';
+@import 'helper-classes/visibility';
+@import 'main-layout';
