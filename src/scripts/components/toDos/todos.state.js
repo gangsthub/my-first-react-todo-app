@@ -23,8 +23,10 @@ const initialState = JSON.parse(window.localStorage.getItem(todosLSKey)) || {
     {
       ...toDoFactory({text: 'To Do 2'})
     },
-  ]
+  ],
 }
+
+initialState.toDosHistory = [...initialState.todos]
 
 
 export {todosLSKey, toDoFactory, initialState}

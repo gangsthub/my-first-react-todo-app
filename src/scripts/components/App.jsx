@@ -27,7 +27,7 @@ function App() {
   )
 
   // try to avoid arrow functions (and bind) in render
-  const addTodo = text =>  dispatch({type: ADD_TODO, text})
+  const addTodo = text => dispatch({type: ADD_TODO, text})
 
   return (
     <>
