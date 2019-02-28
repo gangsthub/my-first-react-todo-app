@@ -1,5 +1,7 @@
 // @ts-check
 
+import newUuid from '../../utils/uuid'
+
 import {toDoFactory} from './todos.state'
 
 export const ADD_TODO = 'ADD_TODO'
@@ -33,7 +35,10 @@ export const todosReducer = (state, action) => {
         todos: newSetOfToDos,
         toDosHistory: [
           ...state.toDosHistory,
-          todoFound && Object.assign(todoFound, { lastAction: REMOVE_TODO })
+          todoFound && Object.assign(todoFound, {
+            lastAction: REMOVE_TODO,
+            date: new Date(),
+          })
         ],
       }
     }
@@ -43,8 +48,11 @@ export const todosReducer = (state, action) => {
       const todoFound = {...state.todos.find(todo => todo.id === action.id)}
       const newSetOfToDos = state.todos.map(todo => {
         if (todo.id === action.id) {
-          todo.checked = !todo.checked
-          todo.lastAction = todo.checked
+          const newTodo = {...todo}
+          newTodo.checked = !todo.checked
+          newTodo.lastAction = CHECK_TODO
+          newTodo.id = newUuid()
+          return newTodo
         }
         return todo
       })
@@ -53,7 +61,12 @@ export const todosReducer = (state, action) => {
         todos: newSetOfToDos,
         toDosHistory: [
           ...state.toDosHistory,
-          todoFound && Object.assign(todoFound, { lastAction: CHECK_TODO, checked: !todoFound.checked })
+          todoFound && Object.assign(todoFound, {
+            lastAction: CHECK_TODO,
+            date: new Date(),
+            id: newUuid(),
+            checked: !todoFound.checked
+          })
         ],
       }
     }
