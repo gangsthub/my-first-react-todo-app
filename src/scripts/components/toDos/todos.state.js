@@ -1,3 +1,5 @@
+// @ts-check
+
 import newUuid from '../../utils/uuid'
 import { ADD_TODO } from './todos.reducer'
 
@@ -5,7 +7,8 @@ import { ADD_TODO } from './todos.reducer'
  * Helper function to generate ToDos
  */
 const toDoFactory = ({
-  text
+  /** @type {srting} */
+  text = ''
 } = {}) => ({
   id: newUuid(),
   text,

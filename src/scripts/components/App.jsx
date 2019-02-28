@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { useReducer, useEffect } from 'react'
 
 import { todosLSKey,  initialState } from './toDos/todos.state'
@@ -8,8 +10,9 @@ import {
   CHECK_TODO
 } from './toDos/todos.reducer'
 
-import AddTodo from './toDos/AddTodo'
-import TodoItem from './toDos/TodoItem'
+import AddTodo from './toDos/todosForm/AddTodo'
+import TodoItem from './toDos/todosForm/TodoItem'
+import History from './toDos/Logging/History'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 
@@ -31,7 +34,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div className="app">
         <Header headerTitle="ToDo App"/>
         <main className="sm:flex justify-content-between">
           <section>
@@ -55,6 +58,7 @@ function App() {
           </section>
           <aside>
             <h2>Logging</h2>
+            <History todos={state.toDosHistory} />
           </aside>
         </main>
         <Footer footerText="Exercise"/>
