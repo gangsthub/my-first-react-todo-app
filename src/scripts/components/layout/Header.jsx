@@ -7,8 +7,8 @@ Header.propTypes = {
 
 export default function Header({headerTitle}) {
   return (
-    <>
+    <header>
       <h1>{headerTitle}</h1>
-    </>
+    </header>
   )
 }

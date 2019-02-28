@@ -39,6 +39,10 @@ module.exports = {
     }],
     "no-debugger": "error",
     "react-hooks/rules-of-hooks": "error",
+    "react/jsx-no-bind": {
+      "allowArrowFunctions": 1,
+      "allowBind": 2
+    }
   },
   globals: {}
 }

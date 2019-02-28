@@ -1,0 +1,13 @@
+// my own utility classes library
+
+@each $mediaName, $mediaValue in $G_WINDOW_DIMENSIONS {
+  @media #{ $mediaValue } {
+    .#{$mediaName}\:flex {
+      display: flex;
+    }
+  }
+}
+
+.justify-content-between {
+  justify-content: between;
+}

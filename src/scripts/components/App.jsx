@@ -31,25 +31,29 @@ function App() {
 
   return (
     <>
-      <div className="App ">
+      <div className="App">
         <Header headerTitle="ToDo App"/>
-        {
-          state.todos.length
-            ?
-            state.todos.map((todo, i) => (
-              <TodoItem
-                key={i}
-                todo={todo}
-                remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
-                toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
-              />
-            ))
-            :
-            'Add your ToDos...'
-        }
-        <AddTodo
-          add={addTodo}
-        />
+        <main className="sm:flex justify-content-between">
+          <section>
+            {
+              state.todos.length
+                ?
+                state.todos.map((todo, i) => (
+                  <TodoItem
+                    key={i}
+                    todo={todo}
+                    remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
+                    toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
+                  />
+                ))
+                :
+                'Add your ToDos...'
+            }
+            <AddTodo
+              add={addTodo}
+            />
+          </section>
+        </main>
         <Footer footerText="Exercise"/>
       </div>
     </>

@@ -1,13 +1,3 @@
-@import "~@graficos/graficols/graficols";
-
-
-$G_WINDOW_DIMENSIONS: (
-    // edit / add BPs as you please
-    sm: '(min-width: 40em)',
-    md: '(min-width: 40.01em) and (max-width: 63.99em)',
-    xl: '(min-width: 64em)',
-);
-
 @include gGenerateCols();
 
 @each $mediaName, $mediaValue in $G_WINDOW_DIMENSIONS {
