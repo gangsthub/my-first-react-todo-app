@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 import { ADD_TODO, REMOVE_TODO, CHECK_TODO } from './../todos.reducer'
 
+import TodoDate from './TodoDate'
 
 const HistoryItem = ({todo}) => {
 
@@ -29,10 +30,11 @@ const HistoryItem = ({todo}) => {
   }
 
   return (
-    <div>
-      {
-        emoji
-      }
+    <div className="mb-5">
+      <div className="mb-2">
+        <TodoDate date={todo.date} />
+      </div>
+      <span className="mr-3">{emoji}</span>
       <span className="oh" title={todo.text}>{subString}</span>
     </div>
   )

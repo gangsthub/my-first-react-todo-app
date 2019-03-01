@@ -3,6 +3,8 @@
 import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 
+import './AddTodo.scss'
+
 const AddTodo = ({add}) => {
   const [text, setText] = useState('')
   const inputRef = useRef()
@@ -24,7 +26,7 @@ const AddTodo = ({add}) => {
   const handleInputChange = e => setText(e.target.value)
 
   return (
-    <form onSubmit={onSubmit} className="mt-auto mb-0 flex pr-3">
+    <form onSubmit={onSubmit} className="mt-4 mb-0 mb-0 flex pr-3 todo__input">
       <input
         autoFocus
         ref={inputRef}

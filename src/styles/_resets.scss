@@ -25,8 +25,8 @@ button {
 
 input[type=checkbox],
 input[type=radio] {
-  width: 1em;
-  height: 1em;
+  min-width: 1em;
+  min-height: 1em;
 }
 
 input[type=text] {

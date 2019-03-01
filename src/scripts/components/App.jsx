@@ -10,7 +10,7 @@ import {
   CHECK_TODO
 } from './toDos/todos.reducer'
 
-import AddTodo from './toDos/todosForm/AddTodo'
+import AddTodo from './toDos/todosForm/AddTodo/AddTodo'
 import TodoItem from './toDos/todosForm/TodoItem/TodoItem'
 import History from './toDos/Logging/History'
 import Header from './layout/Header'
@@ -20,7 +20,7 @@ function App() {
   const [state, dispatch] = useReducer(todosReducer, initialState)
 
   // eslint-disable-next-line no-console
-  console.log(state)
+  // console.log(state)
 
   useEffect(
     () => {
@@ -39,16 +39,16 @@ function App() {
       >
         <Header headerTitle="ToDo App"/>
         <main className="sm:flex justify-content-between flex-1">
-          <section className="pb-4 w80p flex column">
+          <section className="pb-4 w80p flex column justify-content-between">
             <h2>To Do List</h2>
-            <div className="scroll-y">
-
+            <div className="scroll-y mb-auto">
               {
                 state.todos.length
                   ?
                   state.todos.map((todo, i) => (
                     <TodoItem
                       key={i}
+                      i={i}
                       todo={todo}
                       remove={() => dispatch({type: REMOVE_TODO, id: todo.id})}
                       toggleCheck={() => dispatch({type: CHECK_TODO, id: todo.id})}
