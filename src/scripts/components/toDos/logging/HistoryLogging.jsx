@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import HistoryItem from './HistoryItem'
 
-const History = ({todos}) => {
+const HistoryLogging = ({todos}) => {
   return (
     <div className="pa-3">
       {
@@ -15,8 +15,8 @@ const History = ({todos}) => {
   )
 }
 
-History.propTypes = {
+HistoryLogging.propTypes = {
   todos: PropTypes.array,
 }
 
-export default History
+export default HistoryLogging

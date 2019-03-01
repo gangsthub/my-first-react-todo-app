@@ -12,7 +12,7 @@ import {
 
 import AddTodo from './toDos/todosForm/AddTodo/AddTodo'
 import TodoItem from './toDos/todosForm/TodoItem/TodoItem'
-import History from './toDos/Logging/History'
+import HistoryLogging from './toDos/Logging/HistoryLogging'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 
@@ -64,7 +64,7 @@ function App() {
           </section>
           <aside className="w20p scroll-y">
             <h2>Logging</h2>
-            <History todos={state.toDosHistory} />
+            <HistoryLogging todos={state.toDosHistory} />
           </aside>
         </main>
         <Footer footerText="Exercise"/>
