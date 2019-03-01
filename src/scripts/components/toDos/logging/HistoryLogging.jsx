@@ -7,7 +7,7 @@ import HistoryItem from './HistoryItem'
 
 const HistoryLogging = ({todos}) => {
   return (
-    <div className="pa-3">
+    <div className="pa-3 bg-light flex-1">
       {
         todos.map((todo, i) => <HistoryItem key={i} todo={todo} />)
       }

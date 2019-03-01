@@ -35,13 +35,13 @@ function App() {
   return (
     <>
       <div
-        className="app flex column justify-content-between w100p sm:w60p ma-auto"
+        className="app flex column justify-content-between w90p sm:w60p ma-auto "
       >
         <Header headerTitle="ToDo App"/>
         <main className="sm:flex justify-content-between flex-1">
-          <section className="pb-4 w80p flex column justify-content-between">
-            <h2>To Do List</h2>
-            <div className="scroll-y mb-auto">
+          <section className="pb-4 sm:w70p md:w80p xl:w80p flex column justify-content-between">
+            <h2 className="sm:order-0">To Do List</h2>
+            <div className="scroll-y mb-auto sm:order-1">
               {
                 state.todos.length
                   ?
@@ -58,11 +58,15 @@ function App() {
                   'Add your ToDos...'
               }
             </div>
-            <AddTodo
-              add={addTodo}
-            />
+            <div
+              className="sm:order-0"
+            >
+              <AddTodo
+                add={addTodo}
+              />
+            </div>
           </section>
-          <aside className="w20p scroll-y">
+          <aside className="sm:w30p md:w20p xl:w20p scroll-y flex column justify-content-between">
             <h2>Logging</h2>
             <HistoryLogging todos={state.toDosHistory} />
           </aside>

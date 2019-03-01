@@ -41,7 +41,7 @@ const HistoryItem = ({todo}) => {
 }
 
 HistoryItem.propTypes = {
-  todo: PropTypes.object.isRequired,
+  todo: PropTypes.object,
 }
 
 export default HistoryItem

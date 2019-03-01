@@ -11,7 +11,7 @@ const TodoDate = ({date}) => {
 }
 
 TodoDate.propTypes = {
-  date: PropTypes.object
+  date: PropTypes.string
 }
 
 export default TodoDate

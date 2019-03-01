@@ -28,3 +28,13 @@
 .align-items-center {
   align-items: center;
 }
+
+@media all and #{map-get($BREAK_POINTS, 'max-sm')} {
+  .sm\:order-0 {
+    order: 0
+  }
+
+  .sm\:order-1 {
+    order: 1
+  }
+}

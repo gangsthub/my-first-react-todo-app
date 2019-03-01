@@ -10,7 +10,9 @@ const TodoItem = ({todo, i, remove, toggleCheck}) => {
   const customId = 'checked' + todo.id
 
   return (
-    <div className="mb-4 px-4 py-3 mr-3 flex justify-content-between todo__item">
+    <div
+      className="mb-4 px-4 py-3 mr-3 flex justify-content-between align-items-center todo__item bg-light"
+    >
       <label htmlFor={customId} className="flex align-items-center c-p">
         <span className="mr-4">{i}.-</span>
         <input
