@@ -12,7 +12,7 @@ import {
 
 import AddTodo from './toDos/todosForm/AddTodo/AddTodo'
 import TodoItem from './toDos/todosForm/TodoItem/TodoItem'
-import HistoryLogging from './toDos/Logging/HistoryLogging'
+import HistoryLogging from './toDos/logging/HistoryLogging'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 
