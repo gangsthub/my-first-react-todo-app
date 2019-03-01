@@ -18,9 +18,7 @@
     "react-dom": "^16.8.3",
     "react-proptypes": "^1.0.0",
     "typography": "^0.16.18",
-    "typography-theme-alton": "^0.16.18"
-  },
-  "devDependencies": {
+    "typography-theme-alton": "^0.16.18",
     "@babel/core": "^7.3.4",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-react": "^7.0.0",
