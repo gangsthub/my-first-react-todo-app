@@ -17,6 +17,7 @@ and a [`state`](https://github.com/gangsthub/my-first-react-todo-app/blob/237db4
     - `dayjs` to format dates easily (2KB library)
     - `typography` to deal with vertical rythm and default text styles.
     - `prop-types` (React Prop Types) to type inherited props
+    - `@graficos/graficols` my very first npm module for creating cols ☺.
     
 - [x] I am using Parcel instead of Webpack. Not as powerfull but 100 times easier to set up, given I didn't have too much time.
 
