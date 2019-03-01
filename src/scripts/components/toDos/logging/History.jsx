@@ -20,7 +20,7 @@ const History = ({todos}) => {
 }
 
 History.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  todos: PropTypes.array,
 }
 
 export default History
