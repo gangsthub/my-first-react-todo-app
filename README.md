@@ -30,3 +30,6 @@ and a [`state`](https://github.com/gangsthub/my-first-react-todo-app/blob/237db4
 - [ ] more scallable arquitecture and better folder structure
 - [ ] filtering buttons (show only some ToDos...)
 
+## License
+
+This repository (only the code shared here) is lecensed under "GNU General Public License v3.0". Details: https://choosealicense.com/licenses/gpl-3.0/
