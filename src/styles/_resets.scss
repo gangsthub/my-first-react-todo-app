@@ -8,11 +8,12 @@ button {
   color: #FFF;
   font-weight: bold;
   border: none;
-  padding: 4px;
+  padding: 4px 18px;
+  min-width: 90px;
   border-radius: $default-brad;
   &:disabled,
   &[disabled],
-  &[disabled="true"] {
+  &[disabled=true] {
     background-color: lighten($primary, 30%);
     color: rgba(#FFF, .3);
   }
@@ -20,4 +21,14 @@ button {
     outline: none;
     box-shadow: 0 0 0 4px $secondary;
   }
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 1em;
+  height: 1em;
+}
+
+input[type=text] {
+  padding: 4px;
 }

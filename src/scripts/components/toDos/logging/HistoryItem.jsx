@@ -8,7 +8,11 @@ import { ADD_TODO, REMOVE_TODO, CHECK_TODO } from './../todos.reducer'
 
 const HistoryItem = ({todo}) => {
 
-  const subString = todo.text ? ('' + todo.text).substring(0, 10) + '...' : ''
+  const subString = todo.text ?
+    ('' + todo.text).length > 10 ?
+      ('' + todo.text).substring(0, 10) + '...' :
+      todo.text :
+    ''
   let emoji = '➕'
   switch (todo.lastAction) {
   case ADD_TODO:

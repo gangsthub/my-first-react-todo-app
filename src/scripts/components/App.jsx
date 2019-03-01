@@ -40,7 +40,9 @@ function App() {
         <Header headerTitle="ToDo App"/>
         <main className="sm:flex justify-content-between flex-1">
           <section className="pb-4 w80p flex column">
+            <h2>To Do List</h2>
             <div className="scroll-y">
+
               {
                 state.todos.length
                   ?
@@ -61,6 +63,7 @@ function App() {
             />
           </section>
           <aside className="w20p scroll-y">
+            <h2>Logging</h2>
             <History todos={state.toDosHistory} />
           </aside>
         </main>

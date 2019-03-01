@@ -24,16 +24,18 @@ const AddTodo = ({add}) => {
   const handleInputChange = e => setText(e.target.value)
 
   return (
-    <form onSubmit={onSubmit} className="mt-auto mb-0">
+    <form onSubmit={onSubmit} className="mt-auto mb-0 flex pr-3">
       <input
         autoFocus
         ref={inputRef}
         type="text"
         value={text}
+        placeholder="To Do..."
+        className="flex-1"
         onChange={handleInputChange}
       />
       <button
-        className="c-p"
+        className="c-p ml-4"
         disabled={text === ''}
         onClick={handleSubmit}
       >Add</button>

@@ -10,10 +10,11 @@ const TodoItem = ({todo, remove, toggleCheck}) => {
   const customId = 'checked' + todo.id
 
   return (
-    <div className="w100p mb-4 pr-5 flex justify-content-between todo__item">
+    <div className="mb-4 px-4 py-3 mr-3 flex justify-content-between todo__item">
       <label htmlFor={customId} className="flex align-items-center c-p">
         <input
           type="checkbox"
+          className="c-p"
           id={customId}
           checked={todo.checked}
           onChange={toggleCheck}
