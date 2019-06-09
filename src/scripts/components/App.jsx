@@ -15,6 +15,7 @@ import TodoList from './toDos/TodoList/TodoList'
 import HistoryLogging from './toDos/logging/HistoryLogging'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
+import TodosHeader from './toDos/TodosHeader/TodosHeader'
 
 function App() {
   const [state, dispatch] = useReducer(todosReducer, initialState)
@@ -44,7 +45,7 @@ function App() {
         <Header headerTitle="ToDo App" />
         <main className="sm:flex justify-content-between flex-1 scroll-y">
           <section className="pb-4 sm:w70p md:w80p xl:w80p flex column justify-content-between">
-            <h2 className="sm:order-0">To Do List</h2>
+            <TodosHeader todos={state.todos} />
             <TodoList
               todos={state.todos}
               onRemove={onRemove}
@@ -55,7 +56,7 @@ function App() {
             </div>
           </section>
           <aside className="sm:w30p md:w20p xl:w20p scroll-y flex column justify-content-between">
-            <h2>Logging</h2>
+            <h2 className="mb-0">Logging</h2>
             <HistoryLogging todos={state.toDosHistory} />
           </aside>
         </main>

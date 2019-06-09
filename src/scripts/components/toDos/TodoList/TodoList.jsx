@@ -1,14 +1,21 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import styler from 'stylefire'
+import { tween } from 'popmotion'
 import TodoItem from '../todosForm/TodoItem/TodoItem'
+
+const scrollStyler = el => styler(el)
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
   let el
 
   useEffect(() => {
-    setTimeout(() => {
-      el.scrollTop = el.scrollHeight
-    })
+    const styler = scrollStyler(el)
+    tween({
+      from: el.scrollTop,
+      to: el.scrollHeight,
+      duration: 1200
+    }).start(v => styler.set('scrollTop', v))
   })
 
   return (

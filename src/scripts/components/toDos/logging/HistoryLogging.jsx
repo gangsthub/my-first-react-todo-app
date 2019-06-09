@@ -13,7 +13,7 @@ const HistoryLogging = ({ todos }) => {
 
   return (
     <div
-      className="pa-3 bg-light flex-1 scroll-y"
+      className="pa-3 bg-light flex-1 scroll-y mt-3"
       ref={element => {
         el = element
       }}
