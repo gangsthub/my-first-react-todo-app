@@ -51,7 +51,7 @@ function App() {
               onToggle={onToggle}
             />
             <div className="sm:order-0">
-              <AddTodo add={addTodo} />
+              <AddTodo onAdd={addTodo} />
             </div>
           </section>
           <aside className="sm:w30p md:w20p xl:w20p scroll-y flex column justify-content-between">
@@ -59,7 +59,7 @@ function App() {
             <HistoryLogging todos={state.toDosHistory} />
           </aside>
         </main>
-        <Footer footerText="Exercise" />
+        <Footer footerText="Footer" />
       </div>
     </>
   )

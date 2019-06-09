@@ -5,16 +5,17 @@ import PropTypes from 'prop-types'
 
 import './AddTodo.scss'
 
-const AddTodo = ({add}) => {
+const AddTodo = ({ onAdd }) => {
   const [text, setText] = useState('')
   const inputRef = useRef()
+
   /**
    * @param {{ preventDefault: () => void; }} e
    */
-  const onSubmit = (e) => e && e.preventDefault && e.preventDefault()
+  const onSubmit = e => e && e.preventDefault && e.preventDefault()
 
   const handleSubmit = () => {
-    add(text)
+    onAdd(text)
     setText('')
     /** @type {any} */
     const currentInputRef = inputRef && inputRef.current
@@ -40,13 +41,15 @@ const AddTodo = ({add}) => {
         className="c-p ml-4"
         disabled={text === ''}
         onClick={handleSubmit}
-      >Add</button>
+      >
+        Add
+      </button>
     </form>
   )
 }
 
 AddTodo.propTypes = {
-  add: PropTypes.func
+  onAdd: PropTypes.func
 }
 
 export default AddTodo

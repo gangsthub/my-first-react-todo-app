@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import './TodoItem.scss'
 
-const TodoItem = ({ todo, i, remove, toggleCheck }) => {
+const TodoItem = ({ todo, i, onRemove, onToggle }) => {
   const customId = 'checked' + todo.id
 
   return (
@@ -17,7 +17,7 @@ const TodoItem = ({ todo, i, remove, toggleCheck }) => {
           className="c-p"
           id={customId}
           checked={todo.checked}
-          onChange={toggleCheck}
+          onChange={onToggle}
         />
         <span
           className={
@@ -28,7 +28,7 @@ const TodoItem = ({ todo, i, remove, toggleCheck }) => {
           {todo.text}
         </span>
       </label>
-      <button onClick={remove} className="ml-auto mr-0 c-p">
+      <button onClick={onRemove} className="ml-auto mr-0 c-p">
         Remove
       </button>
     </div>
@@ -38,8 +38,8 @@ const TodoItem = ({ todo, i, remove, toggleCheck }) => {
 TodoItem.propTypes = {
   todo: PropTypes.object,
   i: PropTypes.number,
-  remove: PropTypes.func.isRequired,
-  toggleCheck: PropTypes.func.isRequired
+  onRemove: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired
 }
 
 export default TodoItem

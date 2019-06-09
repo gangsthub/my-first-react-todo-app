@@ -24,8 +24,8 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
             key={i}
             i={i}
             todo={todo}
-            remove={() => onRemove(todo.id)}
-            toggleCheck={() => onToggle(todo.id)}
+            onRemove={() => onRemove(todo.id)}
+            onToggle={() => onToggle(todo.id)}
           />
         ))
       ) : (
