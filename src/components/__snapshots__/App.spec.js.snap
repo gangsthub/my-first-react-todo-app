@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App smoke test matched expected output 1`] = `
+<React.Fragment>
+  <div
+    className="app flex column justify-content-between w90p sm:w60p ma-auto "
+  >
+    <Header
+      headerTitle="ToDo App"
+    />
+    <main
+      className="sm:flex justify-content-between flex-1 scroll-y"
+    >
+      <section
+        className="pb-4 sm:w70p md:w80p xl:w80p flex column justify-content-between"
+      >
+        <TodosHeader />
+        <TodoList
+          onRemove={[Function]}
+          onToggle={[Function]}
+        />
+        <div
+          className="sm:order-0"
+        >
+          <AddTodo
+            onAdd={[Function]}
+          />
+        </div>
+      </section>
+      <aside
+        className="sm:w30p md:w20p xl:w20p scroll-y flex column justify-content-between"
+      >
+        <h2
+          className="mb-0"
+        >
+          Logging
+        </h2>
+        <HistoryLogging />
+      </aside>
+    </main>
+    <Footer
+      footerText="Footer"
+    />
+  </div>
+</React.Fragment>
+`;
