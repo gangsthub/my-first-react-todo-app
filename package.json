@@ -8,7 +8,7 @@
     "build": "parcel build src/index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paul Melero",
   "license": "ISC",
   "dependencies": {
     "@graficos/graficols": "^0.1.1",
