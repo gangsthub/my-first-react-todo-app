@@ -14,22 +14,21 @@ const toDoFactory = ({
   text,
   lastAction: ADD_TODO,
   checked: false,
-  date: new Date(),
+  date: new Date()
 })
 
 const todosLSKey = 'toDos'
 const initialState = JSON.parse(window.localStorage.getItem(todosLSKey)) || {
   todos: [
     {
-      ...toDoFactory({text: 'To Do 1'})
+      ...toDoFactory({ text: 'To Do 1' })
     },
     {
-      ...toDoFactory({text: 'To Do 2'})
-    },
-  ],
+      ...toDoFactory({ text: 'To Do 2' })
+    }
+  ]
 }
 
 initialState.toDosHistory = [...initialState.todos]
 
-
-export {todosLSKey, toDoFactory, initialState}
+export { todosLSKey, toDoFactory, initialState }

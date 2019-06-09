@@ -7,14 +7,14 @@ import { ADD_TODO, REMOVE_TODO, CHECK_TODO } from './../todos.reducer'
 
 import TodoDate from './TodoDate'
 
-const HistoryItem = ({todo}) => {
-
-  const subString = todo.text ?
-    ('' + todo.text).length > 10 ?
-      ('' + todo.text).substring(0, 10) + '...' :
-      todo.text :
-    ''
+const HistoryItem = ({ todo }) => {
+  const subString = todo.text
+    ? ('' + todo.text).length > 10
+      ? ('' + todo.text).substring(0, 10) + '...'
+      : todo.text
+    : ''
   let emoji = '➕'
+
   switch (todo.lastAction) {
   case ADD_TODO:
     emoji = todo.checked ? '✅' : '➕'
@@ -32,16 +32,18 @@ const HistoryItem = ({todo}) => {
   return (
     <div className="mb-5">
       <div className="mb-2">
-        <TodoDate date={todo.date} />
+        <TodoDate date={'' + todo.date} />
       </div>
       <span className="mr-3">{emoji}</span>
-      <span className="oh" title={todo.text}>{subString}</span>
+      <span className="oh" title={todo.text}>
+        {subString}
+      </span>
     </div>
   )
 }
 
 HistoryItem.propTypes = {
-  todo: PropTypes.object,
+  todo: PropTypes.object
 }
 
 export default HistoryItem
