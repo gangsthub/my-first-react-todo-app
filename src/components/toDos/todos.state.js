@@ -6,16 +6,18 @@ import { ADD_TODO } from './todos.reducer'
 /**
  * Helper function to generate ToDos
  */
-const toDoFactory = ({
+function toDoFactory({
   /** @type {srting} */
   text = ''
-} = {}) => ({
-  id: newUuid(),
-  text,
-  lastAction: ADD_TODO,
-  checked: false,
-  date: new Date()
-})
+} = {}) {
+  return {
+    id: newUuid(),
+    text,
+    lastAction: ADD_TODO,
+    checked: false,
+    date: new Date()
+  }
+}
 
 const todosLSKey = 'toDos'
 const initialState = JSON.parse(window.localStorage.getItem(todosLSKey)) || {

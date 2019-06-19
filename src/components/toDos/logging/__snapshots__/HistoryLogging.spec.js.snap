@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`History prints a list 1`] = `
+<div
+  className="pa-3 bg-light flex-1 scroll-y mt-3"
+>
+  <HistoryItem
+    todo={
+      Object {
+        "text": "hey",
+      }
+    }
+  />
+  <HistoryItem
+    todo={
+      Object {
+        "text": "hey",
+      }
+    }
+  />
+</div>
+`;
